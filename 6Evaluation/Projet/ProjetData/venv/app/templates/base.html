@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Flask{% endblock %}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    
+</head>
+<section id="sectionblanche">
+<section id="sectionrouge"> 
+
+
+<body>
+    <header>
+    
+    
+        <img src="{{url_for('static', filename='LogoWikidentielle.png')}}" class="item"/>
+    </header>
+
+    <div class="topnav">
+        <a href="/">Accueil</a>
+        <a href="/articles_lefigaro">Articles</a>
+        <a href="/sondages">Sondages</a>
+        <a href="/hello">Rechercher</a>
+        <a href="/about">A Propos</a>
+      </div>
+    
+  
+      
+
+    {% block content %}{% endblock %}
+
+
+</section>
+</section>
+</body>
+</html>
+
+<!-- 
+    {"columns":["Sondeur","Date","Arthaud(LO)","Poutou(NPA)","Roussel(PCF)","M\u00e9lenchon(LFI)","Montebourg(DVG)","Hidalgo(PS)","Taubira(Walwari)","Jadot(E\u00c9LV)","Macron(LREM)","P\u00e9cresse(LR)","Dupont-Aignan(DLF)","Philippot(LP)","Le Pen(RN)","Zemmour(REC)","Lassalle(RES)","Asselineau(UPR)","Thouy(PA)"],
+    "index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74],
+    "data":[["OpinionWay","31 janvier 2022",0,0,3,10,0,3,5,5,24,17,2,0,17,13,1,0,0],
+    ["OpinionWay","27 janvier 2022",1,1,3,9,0,2,5,6,24,18,1,0,17,13,1,0,0],
+    ["Ifop","27 janvier 2022",0,0,3,9,0,3,3,5,24,16,1,0,18,13,1,0,0],
+    ["OpinionWay","27 janvier 2022",0,1,3,9,0,3,5,5,24,17,2,0,17,13,1,0,0],
+    ["BVA","26 janvier 2022",0,0,3,10,0,3,4,6,24,16,2,0,18,12,0,0,0],
+    ["Elabe","26 janvier 2022",0,1,3,10,0,3,0,6,25,17,1,0,17,11,2,0,0],
+    ["OpinionWay","24 janvier 2022",1,1,3,9,0,3,5,5,25,18,1,0,16,13,1,0,0],
+    ["Harris Interactive","24 janvier 2022",0,1,2,10,0,3,5,5,24,15,2,1,17,14,1,0,0],
+    ["Ifop","24 janvier 2022",0,0,3,10,0,3,3,5,24,16,2,0,18,12,1,0,0],
+    ["Cluster17","22 janvier 2022",0,1,2,13,0,2,6,5,22,14,1,1,15,14,1,1,0],
+    ["OpinionWay","21 janvier 2022",0,1,2,9,0,2,6,5,25,18,1,0,17,13,1,0,0],
+    ["OpinionWay","20 janvier 2022",1,1,3,9,0,2,5,5,24,18,1,0,18,13,1,0,0],
+    ["Ifop","20 janvier 2022",0,1,2,10,0,3,3,5,25,16,1,0,18,12,1,0,0],
+    ["OpinionWay","18 janvier 2022",0,1,3,9,1,3,5,5,24,17,1,0,17,12,2,0,0],
+    ["Harris-Interactive","17 janvier 2022",0,0,2,10,1,3,4,6,25,16,1,1,17,14,0,0,0],
+    ["Ipsos","17 janvier 2022",0,1,2,8,0,3,5,7,25,15,2,0,15,13,1,0,0],
+    ["Ifop","17 janvier 2022",0,1,2,9,1,3,4,5,24,16,1,0,17,12,1,0,0],
+    ["Cluster17","15 janvier 2022",0,1,2,12,1,2,5,4,22,13,2,1,14,14,1,1,0],
+    ["OpinionWay","14 janvier 2022",0,1,3,10,1,4,0,6,24,18,2,0,18,12,1,0,0],
+    ["Ifop","13 janvier 2022",0,0,2,9,0,3,4,6,25,17,1,0,16,14,1,0,0],
+    ["Elabe","11 janvier 2022",0,1,1,10,1,2,4,6,22,16,2,1,16,12,2,0,0],
+    ["OpinionWay","11 janvier 2022",1,1,2,9,1,4,0,8,25,16,2,0,17,12,2,0,0],
+    ["Harris-Interactive","10 janvier 2022",0,1,2,11,1,4,0,7,25,16,2,0,16,15,0,0,0],
+    ["Ifop","10 janvier 2022",0,1,2,9,0,4,0,6,27,15,2,0,17,12,1,0,0],
+    ["Cluster17","8 janvier 2022",0,1,2,12,0,2,5,4,23,14,2,1,15,13,1,1,0],
+    ["OpinionWay","7 janvier 2022",1,1,3,9,1,4,0,7,25,17,2,0,17,12,1,0,0],
+    ["Ipsos","6 janvier 2022",1,1,2,9,1,4,0,8,26,16,1,0,17,12,1,0,0],
+    ["BVA","6 janvier 2022",0,1,1,10,1,3,0,8,25,16,2,0,17,12,1,0,0],
+    ["Ifop","5 janvier 2022",0,1,2,8,1,3,0,7,27,16,2,0,16,13,1,0,0],
+    ["OpinionWay","4 janvier 2022",1,1,3,9,1,4,0,7,25,17,2,0,16,13,1,0,0],
+    ["Harris-Interactive","31 d\u00e9cembre 2021",0,1,3,10,1,4,0,7,24,16,2,0,16,16,0,0,0],
+    ["Cluster17","31 d\u00e9cembre 2021",0,1,1,13,1,2,4,4,23,15,1,1,14,15,1,1,0],
+    ["OpinionWay","22 d\u00e9cembre 2021",1,1,2,8,1,4,3,6,26,18,2,0,16,12,1,0,0],
+    ["Cluster17","22 d\u00e9cembre 2021",0,1,1,12,1,2,7,5,20,16,2,1,13,14,1,1,0],
+    ["Elabe","20 d\u00e9cembre 2021",1,1,1,11,2,3,0,5,26,17,2,1,16,13,1,1,1],
+    ["Ifop","15 d\u00e9cembre 2021",0,0,3,9,1,4,0,7,25,18,2,0,16,12,0,0,0],
+    ["OpinionWay","15 d\u00e9cembre 2021",1,1,3,9,2,4,0,8,24,17,2,0,16,12,1,0,0],
+    ["Cluster17","15 d\u00e9cembre 2021",0,1,2,13,1,3,0,5,22,18,1,1,15,15,1,1,0],
+    ["Harris-Interactive","13 d\u00e9cembre 2021",0,1,2,11,1,4,0,7,24,17,2,0,16,15,0,0,0],
+    ["Ipsos","13 d\u00e9cembre 2021",0,1,2,8,1,4,0,8,24,17,2,0,14,14,1,0,0],
+    ["OpinionWay","9 d\u00e9cembre 2021",1,2,2,8,1,5,2,8,25,17,2,0,16,12,0,0,0],
+    ["BVA","8 d\u00e9cembre 2021",0,1,2,9,1,5,0,7,24,17,2,0,16,13,1,0,0],
+    ["Ipsos","8 d\u00e9cembre 2021",0,1,2,8,2,5,0,7,25,16,1,0,16,14,1,0,0],
+    ["Elabe","7 d\u00e9cembre 2021",1,2,1,8,2,3,0,7,23,20,2,1,15,14,2,1,1],
+    ["Cluster17","8 d\u00e9cembre 2021",0,1,2,13,1,3,0,5,23,16,2,1,16,15,1,0,0],
+    ["Ifop","6 d\u00e9cembre 2021",0,0,2,9,1,5,0,6,25,17,2,0,17,13,0,0,0],
+    ["Harris-Interactive","6 d\u00e9cembre 2021",1,1,2,11,1,5,0,7,23,14,2,1,18,14,0,0,0],
+    ["Harris-Interactive","29 novembre 2021",1,1,2,10,2,5,7,23,0,14,0,2,1,19,13,0,0],
+    ["Ifop","25 novembre 2021",0,1,2,7,2,6,7,25,0,13,0,3,0,19,14,0,0],
+    ["Elabe","24 novembre 2021",1,1,2,9,1,4,8,25,0,13,1,2,1,20,12,1,1],
+    ["Harris-Interactive","22 novembre 2021",1,1,2,10,1,5,8,23,0,14,0,2,1,16,16,0,0],
+    ["OpinionWay","17 novembre 2021",1,1,2,9,3,5,8,24,0,13,0,3,0,19,12,0,0],
+    ["BVA","15 novembre 2021",1,1,2,7,2,4,8,26,0,12,0,1,0,18,15,1,1],
+    ["Harris-Interactive","15 novembre 2021",1,1,2,10,2,4,8,23,0,14,0,1,1,16,17,0,0],
+    ["Elabe","11 novembre 2021",1,2,2,8,2,5,7,25,0,13,0,2,0,17,14,1,0],
+    ["Harris-Interactive","8 novembre 2021",1,1,2,10,2,4,8,23,0,14,0,1,1,15,18,0,0],
+    ["Harris-Interactive","30 octobre 2021",1,1,2,10,2,5,8,23,0,14,0,1,1,15,17,0,0],
+    ["Elabe","27 octobre 2021",1,1,2,7,3,5,6,23,1,13,1,3,1,19,15,1,1],
+    ["Harris-Interactive","25 octobre 2021",1,1,2,10,2,5,8,23,0,14,0,1,0,16,17,0,0],
+    ["OpinionWay","20 octobre 2021",1,1,2,9,3,5,8,25,0,12,0,3,0,18,13,0,0],
+    ["Harris-Interactive","18 octobre 2021",1,1,2,10,3,4,8,23,0,14,0,1,0,16,17,0,0],
+    ["Ipsos","13 octobre 2021",1,1,2,8,2,5,9,24,0,13,0,3,0,15,16,1,0],
+    ["Harris-Interactive","11 octobre 2021",1,1,2,11,2,5,7,24,0,14,0,1,0,15,17,0,0],
+    ["BVA","11 octobre 2021",1,0,1,8,4,4,8,26,0,12,0,2,0,16,14,1,1],
+    ["Ifop","6 octobre 2021",0,0,2,7,2,6,8,25,0,16,0,2,0,16,14,1,0],
+    ["Elabe","6 octobre 2021",1,1,2,7,1,5,9,25,1,13,1,3,1,16,13,1,1],
+    ["Harris-Interactive","4 octobre 2021",1,1,2,11,2,6,6,24,0,13,0,2,0,15,17,0,0],
+    ["Ifop","1\u00a0351 2021",1,2,7,3,5,8,24,0,15,0,2,0,18,12,1,0,0],
+    ["Ipsos","30 septembre 2021",1,1,1,9,1,5,9,24,0,14,0,1,0,16,15,1,0],
+    ["Harris-Interactive","27 septembre 2021",1,1,1,13,2,7,6,23,0,14,0,2,1,16,13,0,0],
+    ["OpinionWay","23 septembre 2021",1,1,3,8,3,6,7,24,0,15,0,2,0,20,10,0,0],
+    ["Harris-Interactive","20 septembre 2021",1,1,3,11,2,7,6,23,0,14,0,2,1,18,11,0,0],
+    ["Ifop","15 septembre 2021",0,1,3,8,2,7,6,26,0,15,0,3,0,20,9,0,0],
+    ["Harris-Interactive","13 septembre 2021",1,1,3,11,0,7,7,24,1,15,0,5,1,22,0,1,1],
+    ["Elabe","13 septembre 2021",1,1,2,8,2,7,6,26,1,16,1,5,1,23,0,2,1]]}
+-->
+<script>
+    var ctx3 = document.getElementById('graph3');
+    var ctx1 = document.getElementById('graph1');
+    var ctx2 = document.getElementById('graph2');
+    
+    var ctx4 = document.getElementById('graph4');
+    var ctx5 = document.getElementById('graph5');
+    var ctx6 = document.getElementById('graph6');
+    var ctx7 = document.getElementById('graph7');
+    
+    data = {"columns":["Sondeur","Date","Arthaud(LO)","Poutou(NPA)","Roussel(PCF)","M\u00e9lenchon(LFI)","Montebourg(DVG)","Hidalgo(PS)","Taubira(Walwari)","Jadot(E\u00c9LV)","Macron(LREM)","P\u00e9cresse(LR)","Dupont-Aignan(DLF)","Philippot(LP)","Le Pen(RN)","Zemmour(REC)","Lassalle(RES)","Asselineau(UPR)","Thouy(PA)"],
+    "index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74],
+    "data":[["OpinionWay","31 janvier 2022",0,0,3,10,0,3,5,5,24,17,2,0,17,13,1,0,0],
+    ["OpinionWay","27 janvier 2022",1,1,3,9,0,2,5,6,24,18,1,0,17,13,1,0,0],
+    ["Ifop","27 janvier 2022",0,0,3,9,0,3,3,5,24,16,1,0,18,13,1,0,0],
+    ["OpinionWay","27 janvier 2022",0,1,3,9,0,3,5,5,24,17,2,0,17,13,1,0,0],
+    ["BVA","26 janvier 2022",0,0,3,10,0,3,4,6,24,16,2,0,18,12,0,0,0],
+    ["Elabe","26 janvier 2022",0,1,3,10,0,3,0,6,25,17,1,0,17,11,2,0,0],
+    ["OpinionWay","24 janvier 2022",1,1,3,9,0,3,5,5,25,18,1,0,16,13,1,0,0],
+    ["Harris Interactive","24 janvier 2022",0,1,2,10,0,3,5,5,24,15,2,1,17,14,1,0,0],
+    ["Ifop","24 janvier 2022",0,0,3,10,0,3,3,5,24,16,2,0,18,12,1,0,0],
+    ["Cluster17","22 janvier 2022",0,1,2,13,0,2,6,5,22,14,1,1,15,14,1,1,0],
+    ["OpinionWay","21 janvier 2022",0,1,2,9,0,2,6,5,25,18,1,0,17,13,1,0,0],
+    ["OpinionWay","20 janvier 2022",1,1,3,9,0,2,5,5,24,18,1,0,18,13,1,0,0],
+    ["Ifop","20 janvier 2022",0,1,2,10,0,3,3,5,25,16,1,0,18,12,1,0,0],
+    ["OpinionWay","18 janvier 2022",0,1,3,9,1,3,5,5,24,17,1,0,17,12,2,0,0],
+    ["Harris-Interactive","17 janvier 2022",0,0,2,10,1,3,4,6,25,16,1,1,17,14,0,0,0],
+    ["Ipsos","17 janvier 2022",0,1,2,8,0,3,5,7,25,15,2,0,15,13,1,0,0],
+    ["Ifop","17 janvier 2022",0,1,2,9,1,3,4,5,24,16,1,0,17,12,1,0,0],
+    ["Cluster17","15 janvier 2022",0,1,2,12,1,2,5,4,22,13,2,1,14,14,1,1,0],
+    ["OpinionWay","14 janvier 2022",0,1,3,10,1,4,0,6,24,18,2,0,18,12,1,0,0],
+    ["Ifop","13 janvier 2022",0,0,2,9,0,3,4,6,25,17,1,0,16,14,1,0,0],
+    ["Elabe","11 janvier 2022",0,1,1,10,1,2,4,6,22,16,2,1,16,12,2,0,0],
+    ["OpinionWay","11 janvier 2022",1,1,2,9,1,4,0,8,25,16,2,0,17,12,2,0,0],
+    ["Harris-Interactive","10 janvier 2022",0,1,2,11,1,4,0,7,25,16,2,0,16,15,0,0,0],
+    ["Ifop","10 janvier 2022",0,1,2,9,0,4,0,6,27,15,2,0,17,12,1,0,0],
+    ["Cluster17","8 janvier 2022",0,1,2,12,0,2,5,4,23,14,2,1,15,13,1,1,0],
+    ["OpinionWay","7 janvier 2022",1,1,3,9,1,4,0,7,25,17,2,0,17,12,1,0,0],
+    ["Ipsos","6 janvier 2022",1,1,2,9,1,4,0,8,26,16,1,0,17,12,1,0,0],
+    ["BVA","6 janvier 2022",0,1,1,10,1,3,0,8,25,16,2,0,17,12,1,0,0],
+    ["Ifop","5 janvier 2022",0,1,2,8,1,3,0,7,27,16,2,0,16,13,1,0,0],
+    ["OpinionWay","4 janvier 2022",1,1,3,9,1,4,0,7,25,17,2,0,16,13,1,0,0],
+    ["Harris-Interactive","31 d\u00e9cembre 2021",0,1,3,10,1,4,0,7,24,16,2,0,16,16,0,0,0],
+    ["Cluster17","31 d\u00e9cembre 2021",0,1,1,13,1,2,4,4,23,15,1,1,14,15,1,1,0],
+    ["OpinionWay","22 d\u00e9cembre 2021",1,1,2,8,1,4,3,6,26,18,2,0,16,12,1,0,0],
+    ["Cluster17","22 d\u00e9cembre 2021",0,1,1,12,1,2,7,5,20,16,2,1,13,14,1,1,0],
+    ["Elabe","20 d\u00e9cembre 2021",1,1,1,11,2,3,0,5,26,17,2,1,16,13,1,1,1],
+    ["Ifop","15 d\u00e9cembre 2021",0,0,3,9,1,4,0,7,25,18,2,0,16,12,0,0,0],
+    ["OpinionWay","15 d\u00e9cembre 2021",1,1,3,9,2,4,0,8,24,17,2,0,16,12,1,0,0],
+    ["Cluster17","15 d\u00e9cembre 2021",0,1,2,13,1,3,0,5,22,18,1,1,15,15,1,1,0],
+    ["Harris-Interactive","13 d\u00e9cembre 2021",0,1,2,11,1,4,0,7,24,17,2,0,16,15,0,0,0],
+    ["Ipsos","13 d\u00e9cembre 2021",0,1,2,8,1,4,0,8,24,17,2,0,14,14,1,0,0],
+    ["OpinionWay","9 d\u00e9cembre 2021",1,2,2,8,1,5,2,8,25,17,2,0,16,12,0,0,0],
+    ["BVA","8 d\u00e9cembre 2021",0,1,2,9,1,5,0,7,24,17,2,0,16,13,1,0,0],
+    ["Ipsos","8 d\u00e9cembre 2021",0,1,2,8,2,5,0,7,25,16,1,0,16,14,1,0,0],
+    ["Elabe","7 d\u00e9cembre 2021",1,2,1,8,2,3,0,7,23,20,2,1,15,14,2,1,1],
+    ["Cluster17","8 d\u00e9cembre 2021",0,1,2,13,1,3,0,5,23,16,2,1,16,15,1,0,0],
+    ["Ifop","6 d\u00e9cembre 2021",0,0,2,9,1,5,0,6,25,17,2,0,17,13,0,0,0],
+    ["Harris-Interactive","6 d\u00e9cembre 2021",1,1,2,11,1,5,0,7,23,14,2,1,18,14,0,0,0],
+    ["Harris-Interactive","29 novembre 2021",1,1,2,10,2,5,7,23,0,14,0,2,1,19,13,0,0],
+    ["Ifop","25 novembre 2021",0,1,2,7,2,6,7,25,0,13,0,3,0,19,14,0,0],
+    ["Elabe","24 novembre 2021",1,1,2,9,1,4,8,25,0,13,1,2,1,20,12,1,1],
+    ["Harris-Interactive","22 novembre 2021",1,1,2,10,1,5,8,23,0,14,0,2,1,16,16,0,0],
+    ["OpinionWay","17 novembre 2021",1,1,2,9,3,5,8,24,0,13,0,3,0,19,12,0,0],
+    ["BVA","15 novembre 2021",1,1,2,7,2,4,8,26,0,12,0,1,0,18,15,1,1],
+    ["Harris-Interactive","15 novembre 2021",1,1,2,10,2,4,8,23,0,14,0,1,1,16,17,0,0],
+    ["Elabe","11 novembre 2021",1,2,2,8,2,5,7,25,0,13,0,2,0,17,14,1,0],
+    ["Harris-Interactive","8 novembre 2021",1,1,2,10,2,4,8,23,0,14,0,1,1,15,18,0,0],
+    ["Harris-Interactive","30 octobre 2021",1,1,2,10,2,5,8,23,0,14,0,1,1,15,17,0,0],
+    ["Elabe","27 octobre 2021",1,1,2,7,3,5,6,23,1,13,1,3,1,19,15,1,1],
+    ["Harris-Interactive","25 octobre 2021",1,1,2,10,2,5,8,23,0,14,0,1,0,16,17,0,0],
+    ["OpinionWay","20 octobre 2021",1,1,2,9,3,5,8,25,0,12,0,3,0,18,13,0,0],
+    ["Harris-Interactive","18 octobre 2021",1,1,2,10,3,4,8,23,0,14,0,1,0,16,17,0,0],
+    ["Ipsos","13 octobre 2021",1,1,2,8,2,5,9,24,0,13,0,3,0,15,16,1,0],
+    ["Harris-Interactive","11 octobre 2021",1,1,2,11,2,5,7,24,0,14,0,1,0,15,17,0,0],
+    ["BVA","11 octobre 2021",1,0,1,8,4,4,8,26,0,12,0,2,0,16,14,1,1],
+    ["Ifop","6 octobre 2021",0,0,2,7,2,6,8,25,0,16,0,2,0,16,14,1,0],
+    ["Elabe","6 octobre 2021",1,1,2,7,1,5,9,25,1,13,1,3,1,16,13,1,1],
+    ["Harris-Interactive","4 octobre 2021",1,1,2,11,2,6,6,24,0,13,0,2,0,15,17,0,0],
+    ["Ifop","1er Octobre 2021",1,2,7,3,5,8,24,0,15,0,2,0,18,12,1,0,0],
+    ["Ipsos","30 septembre 2021",1,1,1,9,1,5,9,24,0,14,0,1,0,16,15,1,0],
+    ["Harris-Interactive","27 septembre 2021",1,1,1,13,2,7,6,23,0,14,0,2,1,16,13,0,0],
+    ["OpinionWay","23 septembre 2021",1,1,3,8,3,6,7,24,0,15,0,2,0,20,10,0,0],
+    ["Harris-Interactive","20 septembre 2021",1,1,3,11,2,7,6,23,0,14,0,2,1,18,11,0,0],
+    ["Ifop","15 septembre 2021",0,1,3,8,2,7,6,26,0,15,0,3,0,20,9,0,0],
+    ["Harris-Interactive","13 septembre 2021",1,1,3,11,0,7,7,24,1,15,0,5,1,22,0,1,1],
+    ["Elabe","13 septembre 2021",1,1,2,8,2,7,6,26,1,16,1,5,1,23,0,2,1]]}
+
+    var medias = ['OpinionWay','Ifop','BVA','Elabe','Harris Interactive','Cluster17','Ipsos'];
+
+    function datesParMedia(media){
+        let dates =[];
+        for(let i=data['index'].length-1; i>-1;i--){
+            if(data['data'][i][0]==media){
+                dates.push(data['data'][i][1]);
+            }    
+        }
+        return dates;
+    }
+    
+    function datasetChange(media){
+        var datasetmedia =[];
+        for(let i=data['index'].length-1; i>-1;i--){
+            if(data['data'][i][0]==media){
+                datasetmedia.push(data['data'][i].slice(2));
+            }
+        }
+        return datasetmedia ;
+    }
+
+    function datasetInverse(dataset){
+        var newdataset = [];
+        var candidat = [];
+        for(let j=0;j<dataset[0].length;j++){
+            for(let i=0;i<dataset.length;i++){
+                candidat.push(dataset[i][j]);
+            }
+            newdataset.push(candidat);
+            candidat=[]
+        }
+        return newdataset;
+    }
+    var names = data['columns'].slice(2)
+
+    //===================================
+    //DATASET POUR LE PREMIER MEDIA 
+    //===================================
+
+
+    var date0 = datesParMedia(medias[0]);
+    var data0 = datasetInverse(datasetChange(medias[0])) ;
+    var dataset0 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data0[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data0[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data0[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data0[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data0[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data0[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data0[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data0[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data0[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data0[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data0[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data0[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data0[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data0[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data0[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data0[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data0[16],
+            borderWidth: 1
+        }
+    ]
+    
+    
+    //===================================
+    //DATASET POUR LE DEUXIEME MEDIA 
+    //===================================
+
+    
+    var date1 = datesParMedia(medias[1]);
+    var data1 = datasetInverse(datasetChange(medias[1])) ;
+    var dataset1 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data1[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data1[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data1[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data1[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data1[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data1[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data1[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data1[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data1[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data1[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data1[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data1[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data1[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data1[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data1[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data1[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data1[16],
+            borderWidth: 1
+        }
+    ]
+
+    //===================================
+    //DATASET POUR LE TROISIEME MEDIA 
+    //===================================
+
+    
+    var date2 = datesParMedia(medias[2]);
+    var data2 = datasetInverse(datasetChange(medias[2])) ;
+    var dataset2 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data2[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data2[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data2[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data2[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data2[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data2[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data2[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data2[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data2[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data2[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data2[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data2[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data2[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data2[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data2[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data2[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data2[16],
+            borderWidth: 1
+        }
+    ]
+
+    //===================================
+    //DATASET POUR LE QUATRIEME MEDIA 
+    //===================================
+
+    
+    var date3 = datesParMedia(medias[3]);
+    var data3 = datasetInverse(datasetChange(medias[3])) ;
+    var dataset3 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data3[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data3[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data3[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data3[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data3[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data3[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data3[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data3[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data3[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data3[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data3[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data3[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data3[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data3[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data3[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data3[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data3[16],
+            borderWidth: 1
+        }
+    ]
+
+    //===================================
+    //DATASET POUR LE CINQUIEME MEDIA 
+    //===================================
+
+    
+    var date4 = datesParMedia(medias[4]);
+    var data4 = datasetInverse(datasetChange(medias[4])) ;
+    var dataset4 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data4[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data4[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data4[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data4[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data4[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data4[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data4[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data4[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data4[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data4[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data4[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data4[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data4[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data4[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data4[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data4[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data4[16],
+            borderWidth: 1
+        }
+    ]
+
+    //===================================
+    //DATASET POUR LE SIXIEME MEDIA 
+    //===================================
+
+    
+    var date5 = datesParMedia(medias[5]);
+    var data5 = datasetInverse(datasetChange(medias[5])) ;
+    var dataset5 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data5[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data5[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data5[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data5[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data5[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data5[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data5[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data5[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data5[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data5[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data5[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data5[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data5[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data5[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data5[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data5[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data5[16],
+            borderWidth: 1
+        }
+    ]
+
+    //===================================
+    //DATASET POUR LE SEPTIEME MEDIA 
+    //===================================
+
+    
+    var date6 = datesParMedia(medias[6]);
+    var data6 = datasetInverse(datasetChange(medias[6])) ;
+    var dataset6 = [
+        {
+            label : names[0],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data6[0],
+            borderWidth: 1
+
+        },
+        {
+            label : names[1],
+            borderColor:'#bb0000',
+            backgroundColor:'#bb0000',
+            data : data6[1],
+            borderWidth: 1
+        },
+        {
+            label : names[2],
+            borderColor:'#dd0000',
+            backgroundColor:'#dd0000',
+            data : data6[2],
+            borderWidth: 1
+        },
+        {
+            label : names[3],
+            borderColor:'#cc2443',
+            backgroundColor:'#cc2443',
+            data : data6[3],
+            borderWidth: 1
+        },
+        {
+            label : names[4],
+            borderColor:'#ffc0c0',
+            backgroundColor:'#ffc0c0',
+            data : data6[4],
+            borderWidth: 1
+        },
+        {
+            label : names[5],
+            borderColor:'#ff8080',
+            backgroundColor:'#ff8080',
+            data : data6[5],
+            borderWidth: 1
+        },
+        {
+            label : names[6],
+            borderColor:'#ffd1dc',
+            backgroundColor:'#ffd1dc',
+            data : data6[6],
+            borderWidth: 1
+        },
+        {
+            label : names[7],
+            borderColor:'#00c000',
+            backgroundColor:'#00c000',
+            data : data6[7],
+            borderWidth: 1
+        },
+        {
+            label : names[8],
+            borderColor:'#ffeb00',
+            backgroundColor:'#ffeb00',
+            data : data6[8],
+            borderWidth: 1
+        },
+        {
+            label : names[9],
+            borderColor:'#0066cc',
+            backgroundColor:'#0066cc',
+            data : data6[9],
+            borderWidth: 1
+        },
+        {
+            label : names[10],
+            borderColor:'#0082c4',
+            backgroundColor:'#0082c4',
+            data : data6[10],
+            borderWidth: 1
+        },
+        {
+            label : names[11],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data6[11],
+            borderWidth: 1
+        },
+        {
+            label : names[12],
+            borderColor:'#0d378a',
+            backgroundColor:'#0d378a',
+            data : data6[12],
+            borderWidth: 1
+        },
+        {
+            label : names[13],
+            borderColor:'#404040',
+            backgroundColor:'#404040',
+            data : data6[13],
+            borderWidth: 1
+        },
+        {
+            label : names[14],
+            borderColor:'#26c4ec',
+            backgroundColor:'#26c4ec',
+            data : data6[14],
+            borderWidth: 1
+        },
+        {
+            label : names[15],
+            borderColor:'#118088',
+            backgroundColor:'#118088',
+            data : data6[15],
+            borderWidth: 1
+        },
+        {
+            label : names[16],
+            borderColor:'#8d2e88',
+            backgroundColor:'#8d2e88',
+            data : data6[16],
+            borderWidth: 1
+        }
+    ]
+
+
+
+    
+    
+
+    const myChart1 = new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: date0,
+        datasets:dataset0
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart2 = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: date1,
+        datasets:dataset1
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart3 = new Chart(ctx3, {
+    type: 'line',
+    data: {
+        labels: date2,
+        datasets:dataset2
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart4 = new Chart(ctx4, {
+    type: 'line',
+    data: {
+        labels: date3,
+        datasets:dataset3
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart5 = new Chart(ctx5, {
+    type: 'line',
+    data: {
+        labels: date4,
+        datasets:dataset4
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart6 = new Chart(ctx6, {
+    type: 'line',
+    data: {
+        labels: date5,
+        datasets:dataset5
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+    const myChart7 = new Chart(ctx7, {
+    type: 'line',
+    data: {
+        labels: date6,
+        datasets:dataset6
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>
+
+
+
+
+

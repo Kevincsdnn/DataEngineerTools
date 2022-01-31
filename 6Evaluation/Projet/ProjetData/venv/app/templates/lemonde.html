@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Wikidentielle | Actus{% endblock %}
+
+{% block content %}
+<div class="topnav">
+    <a href="/articles_lefigaro">Le Figaro</a>
+    <a href="/articles_lemonde">Le Monde</a>
+</div>
+<h1>Les dernières actus politique (Le Monde)</h1>
+<div>Nombre d'articles : {{taille}}</div>
+
+
+<section id='articles'>
+{% for idx in range (taille) %}
+<section class="wrapper">
+    <article class="box1">
+        <div id='titre'>{{titres[idx]}}</div>
+        <div id='description'>{{descriptions[idx]}}</div>
+    </article>
+    <aside class="box2">
+        <a href={{liens[idx]}}><img src="{{url_for('static', filename='LogoLien.png')}}" width="80px" /></a>
+        
+        
+    </aside>
+</section>
+{% endfor %}
+</section>
+{% endblock %}

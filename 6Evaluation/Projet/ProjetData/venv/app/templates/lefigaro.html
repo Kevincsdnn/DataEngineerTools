@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Wikidentielle | Actus{% endblock %}
+
+{% block content %}
+<div class="topnav">
+    <a href="/articles_lefigaro">Le Figaro</a>
+    <a href="/articles_lemonde">Le Monde</a>
+</div>
+<h1>Les dernières actus politique (le figaro)</h1>
+<div>Nombre d'articles sur cette page : {{taille}}.</div>
+
+
+
+<section id='articles'>
+{% for idx in range (taille) %}
+<section class="wrapper">
+    <article class="box1">
+        <div id='titre'>{{titres[idx]}}</div>
+        <div id='description'>{{descriptions[idx]}}</div>
+    </article>
+    <aside class="box2">
+        <a href={{liens[idx]}}><img src="{{url_for('static', filename='LogoLien.png')}}" width="80px" /></a>
+        
+        
+    </aside>
+</section>
+{% endfor %}
+</section>
+
+
+<nav aria-label="pagination">
+    <ul class="pagination">
+        {% if nombre==1 %}
+            <li><a href="/articles_lefigaro/1" aria-current="page"><span class="visuallyhidden">page </span>1</a></li>
+            <li><a href="/articles_lefigaro/2"><span class="visuallyhidden">page </span>2</a></li>
+            <li><a href="/articles_lefigaro/3"><span class="visuallyhidden">page </span>3</a></li>
+            <li><a href="/articles_lefigaro/4"><span class="visuallyhidden">page </span>4</a></li>
+            <li><a href="/articles_lefigaro/5"><span class="visuallyhidden">page </span>5</a></li>
+        {% elif nombre==2 %}
+            <li><a href="/articles_lefigaro/1"><span class="visuallyhidden">page </span>1</a></li>
+            <li><a href="/articles_lefigaro/2" aria-current="page"><span class="visuallyhidden">page </span>2</a></li>
+            <li><a href="/articles_lefigaro/3"><span class="visuallyhidden">page </span>3</a></li>
+            <li><a href="/articles_lefigaro/4"><span class="visuallyhidden">page </span>4</a></li>
+            <li><a href="/articles_lefigaro/5"><span class="visuallyhidden">page </span>5</a></li>
+        {% elif nombre==3 %}
+            <li><a href="/articles_lefigaro/1"><span class="visuallyhidden">page </span>1</a></li>
+            <li><a href="/articles_lefigaro/2"><span class="visuallyhidden">page </span>2</a></li>
+            <li><a href="/articles_lefigaro/3" aria-current="page"><span class="visuallyhidden">page </span>3</a></li>
+            <li><a href="/articles_lefigaro/4"><span class="visuallyhidden">page </span>4</a></li>
+            <li><a href="/articles_lefigaro/5"><span class="visuallyhidden">page </span>5</a></li>
+        {% elif nombre==4 %}
+            <li><a href="/articles_lefigaro/1"><span class="visuallyhidden">page </span>1</a></li>
+            <li><a href="/articles_lefigaro/2"><span class="visuallyhidden">page </span>2</a></li>
+            <li><a href="/articles_lefigaro/3"><span class="visuallyhidden">page </span>3</a></li>
+            <li><a href="/articles_lefigaro/4" aria-current="page"><span class="visuallyhidden">page </span>4</a></li>
+            <li><a href="/articles_lefigaro/5"><span class="visuallyhidden">page </span>5</a></li>
+        {% elif nombre==5 %}
+            <li><a href="/articles_lefigaro/1"><span class="visuallyhidden">page </span>1</a></li>
+            <li><a href="/articles_lefigaro/2"><span class="visuallyhidden">page </span>2</a></li>
+            <li><a href="/articles_lefigaro/3"><span class="visuallyhidden">page </span>3</a></li>
+            <li><a href="/articles_lefigaro/4"><span class="visuallyhidden">page </span>4</a></li>
+            <li><a href="/articles_lefigaro/5" aria-current="page"><span class="visuallyhidden">page </span>5</a></li>
+        {% endif %}
+        
+    </ul>
+</nav>
+{% endblock %}
+
+

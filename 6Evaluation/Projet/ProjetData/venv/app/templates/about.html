@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Wikidentielle | A propos{% endblock %}
+
+{% block content %}
+
+<h1>A propos de nous...</h1>
+<div id="debug"></div>
+<div class='textapropos'>
+    Nous sommes trois étudiants spécialisés en Data Science et Intelligence Artificielle à l'ESIEE Paris : Kévin, Marius et Mathieu.
+</div>
+<div class='textapropos'>
+    Ce projet consistait à récupérer des données sur différents sites web autour d'un même thème (Nous avons choisi la politique en France) 
+    par des méthodes de scraping. 
+</div>
+<div class='textapropos'>
+    Nous avons donc voulu récolter des données textuelles comme des articles et des données sous forme de
+    tableaux pour réaliser des graphiques sur les sondages à la présidentielle 2022.
+</div>
+<div class='textapropos'>
+    Dans un deuxième temps nous devions traiter ces données via Mongo et les afficher sur un mini site web codé sous flask, un module de 
+    Microframework en python.
+</div>
+
+<div id ='contact'>
+    <img src="{{url_for('static', filename='LogoLinkedin.png')}}" width="30px"/>
+    <b>Nous contacter :</b>
+    
+</div>
+<section id='lienlk'>
+    <a href='https://www.linkedin.com/in/kevin-cassedanne-b4327319b/'><img src="{{url_for('static', filename='kevtete.jfif')}}" class='linkdinimg'/></a>
+    <a href='https://www.linkedin.com/in/marius-morel-7332b1222/'><img src="{{url_for('static', filename='martete.jfif')}}"class='linkdinimg'/></a>
+    <a href='https://www.linkedin.com/in/mathieu-pochon-092842222/'><img src="{{url_for('static', filename='mathtete.jfif')}}" class='linkdinimg'/></a>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
